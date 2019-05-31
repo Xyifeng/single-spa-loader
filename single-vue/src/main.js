@@ -17,7 +17,6 @@ const vueLifecycles = singleSpaVue({
     render: h => h(App)
   }
 })
-// eslint-disable-next-line no-console
 
 export const bootstrap = [
   vueLifecycles.bootstrap,
