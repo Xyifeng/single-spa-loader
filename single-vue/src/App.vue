@@ -6,21 +6,26 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   created() {
+    let globalEventDistributor = this.$store.state.globalEventDistributor;
+    globalEventDistributor.dispatch({ type: "REFRESH" });
+    // 刷新次数+1
+    // eslint-disable-next-line no-console
+    console.log(globalEventDistributor.getState());
   },
   components: {
     HelloWorld
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

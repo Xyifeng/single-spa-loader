@@ -7,7 +7,7 @@ export class GlobalEventDistributor {
     registerStore(store) {
         this.stores.push(store);
     }
-    // 执行子项目事件
+    // 执行所有子项目事件
     dispatch(event) {
         this.stores.forEach((s) => {
             s.dispatch(event)

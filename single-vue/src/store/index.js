@@ -5,11 +5,15 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    count: 0
+    globalEventDistributor:null,
+    store:[]
   },
   mutations: {
-    increment (state) {
-      state.count++
+    setGlobalEventDistributor(state,globalEventDistributor){
+      state.globalEventDistributor=globalEventDistributor
+    },
+    setStore(state,store){
+      state.store=store
     }
   }
 })

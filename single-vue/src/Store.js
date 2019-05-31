@@ -16,4 +16,4 @@ function render(state = initialState, action) {
 }
 
 // 向外输出 Store
-export const storeInstance = createStore(combineReducers({ namespace: () => 'base', render }))
+export const storeInstance = createStore(combineReducers({ namespace: () => 'vue', render }))

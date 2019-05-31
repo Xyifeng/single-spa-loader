@@ -24,11 +24,10 @@ export const bootstrap = [
 ];
 
 export function mount(props) {
-  // eslint-disable-next-line no-console
-  let globalEventDistributor=props.globalEventDistributor
-  
-
-
+  // 从redux传入Vuex
+  store.commit('setGlobalEventDistributor',props.globalEventDistributor)
+  store.commit('setStore',props.store)
+  // 动态创建dom
   createDomElement();
   return vueLifecycles.mount(props);
 }
@@ -41,7 +40,7 @@ function createDomElement() {
   let el = window.document.getElementById('vue-app');
   if (!el) {
     el = window.document.createElement('div');
-    el.id='vue-app'
+    el.id = 'vue-app'
     document.body.appendChild(el)
   }
   return el
