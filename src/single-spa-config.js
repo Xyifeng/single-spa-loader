@@ -9,7 +9,8 @@ async function bootstrap() {
           path: element.path,// 应用路径
           main:element.main,// js文件路径
           store:element.store,
-          dev:element.dev
+          devMain:element.devMain,// 开发环境入口
+          devStore:element.devStore
       });
   });
   singleSpa.start();
